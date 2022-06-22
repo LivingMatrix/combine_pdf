@@ -176,5 +176,5 @@ module CombinePDF
   def eq_depth_limit= value
     @eq_depth_limit = value
   end
-  @eq_depth_limit = 8
+  @eq_depth_limit = 2
 end
