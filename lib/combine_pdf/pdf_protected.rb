@@ -25,7 +25,11 @@ module CombinePDF
       existing = {}.dup
       should_resolve = [].dup
       #set all existing objects as resolved and register their children for future resolution
-      @objects.each { |obj| existing[obj] = obj ; resolved[obj.object_id] = obj; should_resolve << obj.values}
+      @objects.each do |obj| 
+        # existing[obj] = obj;
+        # resolved[obj.object_id] = obj;
+        should_resolve << obj.values
+      end
       # loop until should_resolve is empty
       while should_resolve.any?
         obj = should_resolve.pop
